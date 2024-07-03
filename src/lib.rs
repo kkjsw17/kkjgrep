@@ -105,14 +105,14 @@ fn search_based_on_case<'a>(config: &'a Config, contents: &'a String) -> Vec<&'a
     }
 }
 
-pub fn search<'a>(query: &str, contents: &'a str) -> Vec<&'a str> {
+fn search<'a>(query: &str, contents: &'a str) -> Vec<&'a str> {
     contents
         .lines()
         .filter(|line| line.contains(query))
         .collect()
 }
 
-pub fn search_case_insensitive<'a>(
+fn search_case_insensitive<'a>(
     query: &str,
     contents: &'a str,
 ) -> Vec<&'a str> {
@@ -124,7 +124,7 @@ pub fn search_case_insensitive<'a>(
         .collect()
 }
 
-pub fn replace<'a>(query: &str, replace: &str, contents: &'a str, ) -> String {
+fn replace<'a>(query: &str, replace: &str, contents: &'a str, ) -> String {
     contents.replace(query, replace)
 }
 
